@@ -2,6 +2,7 @@
 using tabuleiro;
 namespace xadrez_console {
     class Tela {
+        //------------------------------- START -------------------------------//
         public static void imprimirTabuleiro(Tabuleiro tab) {
             for(int i=0; i < tab.linhas; i++) { 
                 for(int j=0;j<tab.colunas; j++) {
@@ -15,5 +16,6 @@ namespace xadrez_console {
                 Console.WriteLine();
             }       
         }
+        //-------------------------------- END -------------------------------//
     }
 }

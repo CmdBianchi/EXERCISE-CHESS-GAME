@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 namespace tabuleiro {
+    //------------------------------- START -------------------------------//
     enum Cor {
         Branca,
         Preta,
@@ -13,4 +14,5 @@ namespace tabuleiro {
         Verde,
         Laranja,
     }
+    //------------------------------- END -------------------------------//
 }
