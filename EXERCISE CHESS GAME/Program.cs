@@ -1,9 +1,7 @@
 ﻿using System;
-using EXERCISE_CHESS_GAME.tabuleiro;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using tabuleiro;
+using xadrez_console;
+
 namespace EXERCISE_CHESS_GAME {
     //-----> START
     ////////////////////////////////////////////////////////////////////////////////////////////
@@ -12,7 +10,9 @@ namespace EXERCISE_CHESS_GAME {
 
             Tabuleiro tab = new Tabuleiro(8, 8);
 
-            Console.ReadLine();
+            Tela.imprimirTabuleiro(tab);
+
+            
         }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////

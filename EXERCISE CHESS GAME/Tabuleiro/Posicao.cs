@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-namespace EXERCISE_CHESS_GAME.Tabuleiro{
+﻿namespace tabuleiro{
     //------------------------------- START -------------------------------//
     class Posicao {
         public int linha { get; set; }
