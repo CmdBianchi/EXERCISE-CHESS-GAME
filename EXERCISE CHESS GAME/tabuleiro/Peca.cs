@@ -12,6 +12,12 @@
             this.qteMovimentos = 0;
             this.tab = tab;
         }
+        //------------------------------- MET -------------------------------//
+        public void incrementarQteMovimentos() {
+            qteMovimentos++;
+        }
+
+
         //-------------------------------- END -------------------------------//
     }
 }
