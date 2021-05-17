@@ -16,7 +16,7 @@
         public void incrementarQteMovimentos() {
             qteMovimentos++;
         }
-        public bool[,] movimentosPossiveis() { 
+        public abstract bool[,] movimentosPossiveis() { 
 
         }
 
