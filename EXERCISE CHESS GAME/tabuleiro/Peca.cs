@@ -1,4 +1,6 @@
-﻿namespace tabuleiro {
+﻿using tabuleiro;
+using xadres;
+namespace tabuleiro {
     abstract class Peca {
         //------------------------------- START -------------------------------//
         public Posicao posicao { get; set; }
@@ -16,10 +18,7 @@
         public void incrementarQteMovimentos() {
             qteMovimentos++;
         }
-        public abstract bool[,] movimentosPossiveis() { 
-
-        }
-
+        public abstract bool[,] movimentosPossiveis();     
         //-------------------------------- END -------------------------------//
     }
 }

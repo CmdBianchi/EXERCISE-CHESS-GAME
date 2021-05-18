@@ -24,7 +24,6 @@ namespace xadres {
                 }
                 pos.linha = pos.linha - 1;
             }
-
             // DIREITA
             pos.definirValores(posicao.linha, posicao.coluna + 1);
             while(tab.posicaoValida(pos) && podeMover(pos)) {
@@ -34,7 +33,6 @@ namespace xadres {
                 }
                 pos.linha = pos.coluna + 1;
             }
-
             // ABAIXO
             pos.definirValores(posicao.linha + 1, posicao.coluna);
             while(tab.posicaoValida(pos) && podeMover(pos)) {
@@ -44,7 +42,6 @@ namespace xadres {
                 }
                 pos.linha = pos.linha + 1;
             }
-
             // ESQUERDA
             pos.definirValores(posicao.linha - 1, posicao.coluna + 1);
             while (tab.posicaoValida(pos) && podeMover(pos)) {
@@ -54,7 +51,6 @@ namespace xadres {
                 }
                 pos.linha = pos.coluna - 1;
             }
-
             return mat;
         }
     }
