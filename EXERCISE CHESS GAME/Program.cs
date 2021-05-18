@@ -9,7 +9,6 @@ namespace EXERCISE_CHESS_GAME {
         static void Main(string[] args) {
             try {
                 PartidaDeXadrez partida = new PartidaDeXadrez();
-
                 while (!partida.terminada) {
                     try {
                         Console.Clear();
@@ -39,14 +38,11 @@ namespace EXERCISE_CHESS_GAME {
                         Console.WriteLine(e.Message);
                         Console.ReadLine();
                     }
-
                 }
-
             }
             catch (TabuleiroException e) {
                 Console.WriteLine(e.Message);
             }
-
             Console.ReadLine();
         }
     }
