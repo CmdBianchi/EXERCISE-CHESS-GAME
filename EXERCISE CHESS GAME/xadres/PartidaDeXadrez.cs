@@ -30,6 +30,17 @@ namespace xadres {
             turno++;
             mudaJogador();
         }
+        public void validarPosicaoDeorgem(Posicao pos) { 
+            if(tab.peca(pos) == null) {
+                throw new TabuleiroException("Não existe peça na posição de origem");
+            }
+            if(jogadorAtual != tab.peca(pos).cor) {
+                throw new TabuleiroException("A peça de origem escolhida não é sua!");
+            }
+            if (!tab.peca(pos).existeMovimentosPossiveis()) {
+                throw new TabuleiroException("Não há movimentos possíveis para a peça de origem escolhida!");
+            }
+        }
         private void mudaJogador() { 
             if(jogadorAtual == Cor.Branca) {
                 jogadorAtual = Cor.Preta;
@@ -38,11 +49,9 @@ namespace xadres {
                 jogadorAtual = Cor.Branca;
             }
         }
-
         private void colocarPecas() {
             tab.colocarPeca(new Torre(tab, Cor.Branca), new PosicaoXadrez('c',1).toPosicao());
         }
-
     }
     //-------------------------------- END -------------------------------//
 }
