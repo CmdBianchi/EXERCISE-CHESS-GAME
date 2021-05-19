@@ -6,4 +6,8 @@
     <RootNamespace>EXERCISE_CHESS_GAME</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="xadres\Dama.cs~RFd874ab8.TMP" />
+  </ItemGroup>
+
 </Project>

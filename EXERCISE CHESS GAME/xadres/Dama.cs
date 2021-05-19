@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using tabuleiro;
 namespace xadres {
+    //------------------------------- START -------------------------------//
     class Dama : Peca {
         public Dama(Tabuleiro tab, Cor cor) : base(tab, cor) {
         }
@@ -95,4 +96,5 @@ namespace xadres {
             return mat;
         }
     }
+    //------------------------------- END -------------------------------//
 }

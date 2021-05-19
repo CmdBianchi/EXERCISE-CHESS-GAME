@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using tabuleiro;
 namespace xadres {
+    //------------------------------- START -------------------------------//
     class Bispo : Peca {
         public Bispo(Tabuleiro tab, Cor cor) : base(tab, cor) {
         }
@@ -57,4 +58,5 @@ namespace xadres {
             return mat;
         }
     }
+    //------------------------------- END -------------------------------//
 }

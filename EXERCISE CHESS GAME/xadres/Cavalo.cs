@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using tabuleiro;
 namespace xadres{
-
+    //------------------------------- START -------------------------------//
     class Cavalo : Peca {
 
         public Cavalo(Tabuleiro tab, Cor cor) : base(tab, cor) {
@@ -56,4 +56,5 @@ namespace xadres{
             return mat;
         }
     }
+    //------------------------------- END -------------------------------//
 }
