@@ -39,6 +39,8 @@ namespace EXERCISE_CHESS_GAME {
                         Console.ReadLine();
                     }
                 }
+                Console.Clear();
+                Tela.imprimirPartida(partida);
             }
             catch (TabuleiroException e) {
                 Console.WriteLine(e.Message);
