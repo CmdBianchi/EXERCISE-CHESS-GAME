@@ -4,15 +4,15 @@ using System.Collections.Generic;
 namespace xadres {
     //------------------------------- START -------------------------------//
     class PartidaDeXadrez {
-
         public Tabuleiro tab { get; private set; }
         public int turno { get; private set; }
         public Cor jogadorAtual { get; private set; }
         public bool terminada { get; private set; }
         private HashSet<Peca> pecas;
         private HashSet<Peca> capturadas;
-        public bool xeque { get; private set; }
+        private Posicao destino;
 
+        public bool xeque { get; private set; }
         public PartidaDeXadrez () {
             tab = new Tabuleiro(8, 8);
             turno = 1;
@@ -23,7 +23,6 @@ namespace xadres {
             capturadas = new HashSet<Peca>();
             colocarPecas();
         }
-
         public Peca executaMovimento(Posicao origem , Posicao destino) {
             Peca p = tab.retirarPeca(origem);
             p.incrementarQteMovimentos();
@@ -56,9 +55,18 @@ namespace xadres {
             else {
                 xeque = false;
             }
-            turno++;
-            mudaJogador();
+            if (testeXequemate(adversaria(jogadorAtual))) {
+                terminada = true;
+            }
+            else {
+                turno++;
+                mudaJogador();
+            }
         }
+        private bool testeXequemate() {
+            throw new NotImplementedException();
+        }
+
         public void validarPosicaoDeorgem(Posicao pos) { 
             if(tab.peca(pos) == null) {
                 throw new TabuleiroException("Não existe peça na posição de origem");
@@ -75,7 +83,6 @@ namespace xadres {
                 throw new TabuleiroException("Posição de destino inválida!");
             }
         }
-
         private void mudaJogador() { 
             if(jogadorAtual == Cor.Branca) {
                 jogadorAtual = Cor.Preta;
@@ -103,6 +110,29 @@ namespace xadres {
             aux.ExceptWith(pecasCapturadas(cor));
             return aux;
         }
+        public bool testeXequemate(Cor cor) { 
+            if (!estaEmXeque(cor)) {
+                return false;
+            }
+            foreach(Peca x in pecasEmjogo(cor)) {
+                bool[,] mat = x.movimentosPossiveis();
+                for(int i=0; i<tab.linhas; i++) { 
+                    for(int j=0; j<tab.colunas; j++) { 
+                        if(mat[i, j]) {
+                            Peca pecaCapturada = executaMovimento(x.posicao, new Posicao(i, j));
+                            bool testeXeque = estaEmXeque(cor);
+                            desfazMovimento(x.posicao, destino, pecaCapturada);
+                            if (!testeXeque) {
+                                return false;
+                            }
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+
+
         private Cor adversaria(Cor cor) { 
             if(cor == Cor.Branca) {
                 return Cor.Preta;
